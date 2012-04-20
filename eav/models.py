@@ -57,14 +57,14 @@ class EnumValue(models.Model):
 
     For example:
 
-    >>> yes = EnumValue.objects.create(value='yes')
+    >>> si = EnumValue.objects.create(value='si')
     >>> no = EnumValue.objects.create(value='no')
     >>> unkown = EnumValue.objects.create(value='unkown')
 
-    >>> ynu = EnumGroup.objects.create(name='Yes / No / Unkown')
-    >>> ynu.enums.add(yes, no, unkown)
+    >>> ynu = EnumGroup.objects.create(name='Si / No / Unkown')
+    >>> ynu.enums.add(si, no, unkown)
 
-    >>> Atrribute.objects.create(name='Has Fever?',
+    >>> Attribute.objects.create(name='Has Fever?',
     ...                          datatype=Attribute.TYPE_ENUM,
     ...                          enum_group=ynu)
 
@@ -505,7 +505,7 @@ class Entity(object):
 
         This would allow you to do:
 
-        >>> for i in m.eav: print i
+        for i in m.eav: print i
         '''
         return iter(self.get_values())
 
